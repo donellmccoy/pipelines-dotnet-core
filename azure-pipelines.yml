@@ -19,7 +19,7 @@ stages:
       displayName: 'Run unit tests'
       
 - stage: Test
-  displayName: 'Test Stage'
+  displayName: 'Testing Stage'
   dependsOn: Build
   isSkippable: false
   jobs:
