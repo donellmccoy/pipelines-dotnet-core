@@ -30,7 +30,6 @@ stages:
         echo "Running unit tests..."
       displayName: 'Run unit tests'
 
-# Deploy resources to staging server
 - stage: DeployToStaging
   displayName: 'Deploy to Staging'
   dependsOn: Test
@@ -55,7 +54,6 @@ stages:
         instructions: 'Please validate the stage configuration and resume'
         onTimeout: 'resume'
 
-# Deploy resources to production server
 - stage: DeployToProduction
   displayName: 'Deploy to Production'
   dependsOn: DeployToStaging
@@ -81,7 +79,6 @@ stages:
         instructions: 'Please validate the build configuration and resume'
         onTimeout: 'resume'
 
-# Deploy resources to alternate production server
 - stage: DeployToAlternateProduction
   displayName: 'Deploy to Alternate Production'
   condition: succeeded()
